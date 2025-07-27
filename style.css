@@ -21,29 +21,60 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
+  padding: 14px 10%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
+  color: #ff4e9b;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.logo:hover {
+  color: #ff9ac2;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
-  color: white;
+  color: #f1f1f1;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff4e9b;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #38ada9;
+  color: #ffb6dd;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .hero {
