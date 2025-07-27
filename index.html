@@ -15,9 +15,12 @@
   <p class="loading-text">cie...nungguin ya</p>
 </div>
   <header>
-    <nav class="navbar">
-      <div class="logo">bara?iyakenapa</div>
-      <ul class="nav-links">
+   <nav class="navbar">
+  <div class="logo">bara?iyakenapa</div>
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+  <ul class="nav-links" id="nav-links">
         <li><a href="#about">Tentang</a></li>
         <li><a href="#skills">Keahlian</a></li>
         <li><a href="#contact">Kontak</a></li>
@@ -94,6 +97,15 @@
       preloader.style.transition = "all 0.5s ease";
     });
   </script>
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>
 </body>
