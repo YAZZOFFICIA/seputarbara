@@ -9,6 +9,7 @@ body {
   background-color: #1f1f2e;
   color: #f1f1f1;
   line-height: 1.6;
+  padding-top: 70px; /* agar konten tidak tertutup navbar */
 }
 
 /* Header & Navbar */
@@ -26,8 +27,10 @@ header {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
 }
 
@@ -144,17 +147,31 @@ h2 {
 /* Skills */
 .skills ul {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 15px;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  justify-content: center;
 }
 
 .skills li {
-  background-color: #34495e;
+  background-color: #2e4053;
   color: #f1f1f1;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
 }
+
+.skills li:hover {
+  transform: scale(1.05);
+  background-color: #34495e;
+}
+
 
 /* Contact */
 .contact p {
@@ -284,4 +301,12 @@ footer {
   .hamburger {
     display: block;
   }
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: #f1f1f1;
+  cursor: pointer;
+  z-index: 1001; /* tambahkan ini */
+  position: relative; /* pastikan posisinya bisa diatur */
 }
