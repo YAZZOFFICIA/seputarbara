@@ -24,13 +24,15 @@
         <li><a href="#about">Tentang</a></li>
         <li><a href="#skills">Keahlian</a></li>
         <li><a href="#contact">Kontak</a></li>
+        <li><a href="#tebak">Tebakan</a></li>
+
       </ul>
     </nav>
     <section class="hero">
       <div class="hero-text">
-        <h1><span>Halo, Saya baraa</span></h1>
+        <h1><span>haii haii akuu bara</span></h1>
         <p>ulramen | mafia</p>
-        <blockquote class="motivasi">"Kadang yang serius justru kalah sama yang datang belakangan."</blockquote>
+        <blockquote class="motivasi">"kadang yang serius justru kalah sama yang datang belakangan."</blockquote>
       </div>
       <div class="hero-photo">
         <img src="foto-profil.jpg" alt="Foto Profil Bara" />
@@ -72,6 +74,17 @@
     Browser kamu tidak mendukung pemutar audio.
   </audio>
 </section>
+<section id="tebak" class="tebakan">
+  <h2>tebak tebakann</h2>
+  <div class="tebak-box">
+    <p id="pertanyaan">Tebakan akan muncul di sini...</p>
+    <input type="text" id="jawaban" placeholder="Jawaban kamu..." />
+    <button onclick="cekJawaban()">Jawab</button>
+    <p id="feedback"></p>
+  </div>
+</section>
+<a href="baper-malam.html" class="btn-baper">cobaa cek kesinii</a>
+
 
     <section id="contact" class="contact">
       <h2>Kontak</h2>
@@ -86,7 +99,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 BARAGANTENG. Semua hak dilindungi.</p>
+    <p>&copy; 2025 BARAGANTENG</p>
   </footer>
     <!-- Ini di bagian paling bawah HTML -->
   <script>
@@ -104,6 +117,49 @@
   hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
+</script>
+<script>
+  const tebakan = [
+    {
+      soal: "bawang apa yang suka pergi?",
+      jawab: "bawang bomBYe"
+    },
+    {
+      soal: "gajah apa yang ngeselin?",
+      jawab: "gajahdi"
+    },
+    {
+      soal: "kapan air ngantuk",
+      jawab: "pas di rebus soalnya pas di rebus air nguap"
+    },
+    {
+      soal: "truk apa yang bisa terbang?",
+      jawab: "helikoptruk wkwk"
+    }
+  ];
+
+  let index = Math.floor(Math.random() * tebakan.length);
+  document.getElementById("pertanyaan").textContent = tebakan[index].soal;
+
+  function cekJawaban() {
+    const userJawab = document.getElementById("jawaban").value.toLowerCase();
+    const benar = tebakan[index].jawab.toLowerCase();
+    const feedback = document.getElementById("feedback");
+
+    if (userJawab === benar) {
+      feedback.textContent = "😎 jir bener hoki banget";
+    } else {
+      feedback.textContent = `😅 salahhh wuuur: "${tebakan[index].jawab}"`;
+    }
+
+    // Ganti ke tebakan baru
+    setTimeout(() => {
+      index = Math.floor(Math.random() * tebakan.length);
+      document.getElementById("pertanyaan").textContent = tebakan[index].soal;
+      document.getElementById("jawaban").value = "";
+      feedback.textContent = "";
+    }, 4000);
+  }
 </script>
 
 </body>
