@@ -2,37 +2,43 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>bara?iyakenapa</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
-    <div id="preloader">
-  <div class="loader"></div>
-  <p class="loading-text">cie...nungguin ya</p>
-</div>
-  <header>
-   <nav class="navbar">
-  <div class="logo">bara?iyakenapa</div>
-  <div class="hamburger" id="hamburger">
-    <i class="fas fa-bars"></i>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+    <p class="loading-text">cie... nungguin ya</p>
   </div>
-  <ul class="nav-links" id="nav-links">
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">bara?iyakenapa</div>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">Tentang</a></li>
         <li><a href="#skills">Keahlian</a></li>
-        <li><a href="#contact">Kontak</a></li>
+        <li><a href="#gallery">Seputar Bara</a></li>
+        <li><a href="#musik">Fav Songs</a></li>
         <li><a href="#tebak">Tebakan</a></li>
-
+        <li><a href="#contact">Kontak</a></li>
       </ul>
     </nav>
+
     <section class="hero">
       <div class="hero-text">
         <h1><span>haii haii akuu bara</span></h1>
-        <p>ulramen | mafia</p>
-        <blockquote class="motivasi">"kadang yang serius justru kalah sama yang datang belakangan."</blockquote>
+        <p>ultramen | mafia</p>
+        <blockquote class="motivasi">"Kadang yang serius justru kalah sama yang datang belakangan."</blockquote>
       </div>
       <div class="hero-photo">
         <img src="foto-profil.jpg" alt="Foto Profil Bara" />
@@ -42,8 +48,8 @@
 
   <main>
     <section id="about" class="about">
-      <h2>about me</h2>
-      <p>ngestalk sampe sini ngapain jir</p>
+      <h2>About Me</h2>
+      <p>ngestalk sampe sini ngapain jir?</p>
     </section>
 
     <section id="skills" class="skills">
@@ -57,110 +63,113 @@
     </section>
 
     <section id="gallery" class="gallery">
-  <h2>seputar bara</h2>
-  <div class="gallery-grid">
-    <img src="foto1.jpg" alt="Foto 1">
-    <img src="foto2.jpg" alt="Foto 2">
-    <img src="foto3.jpg" alt="Foto 3">
-    <img src="foto4.jpg" alt="Foto 4">
-    <img src="foto5.jpg" alt="Foto 5">
-    <img src="foto6.jpg" alt="Foto 6">
-  </div>
-</section>
-<section class="musik">
-  <h2>fav songs</h2>
-  <audio controls autoplay loop>
-    <source src="lagugalau.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung pemutar audio.
-  </audio>
-</section>
-<section id="tebak" class="tebakan">
-  <h2>tebak tebakann</h2>
-  <div class="tebak-box">
-    <p id="pertanyaan">Tebakan akan muncul di sini...</p>
-    <input type="text" id="jawaban" placeholder="Jawaban kamu..." />
-    <button onclick="cekJawaban()">Jawab</button>
-    <p id="feedback"></p>
-  </div>
-</section>
+      <h2>Seputar Bara</h2>
+      <div class="gallery-grid">
+        <img src="foto1.jpg" alt="Foto 1" />
+        <img src="foto2.jpg" alt="Foto 2" />
+        <img src="foto3.jpg" alt="Foto 3" />
+        <img src="foto4.jpg" alt="Foto 4" />
+        <img src="foto5.jpg" alt="Foto 5" />
+        <img src="foto6.jpg" alt="Foto 6" />
+      </div>
+    </section>
+
+    <section id="musik" class="musik">
+      <h2>Fav Songs</h2>
+      <audio controls autoplay loop>
+        <source src="lagugalau.mp3" type="audio/mpeg" />
+        Browser kamu tidak mendukung pemutar audio.
+      </audio>
+    </section>
+
+    <section id="tebak" class="tebakan">
+      <h2>Tebak-Tebakan</h2>
+      <div class="tebak-box">
+        <p id="pertanyaan">Tebakan akan muncul di sini...</p>
+        <input type="text" id="jawaban" placeholder="Jawaban kamu..." autocomplete="off" />
+        <button onclick="cekJawaban()">Jawab</button>
+        <p id="feedback"></p>
+      </div>
+    </section>
+
     <section id="contact" class="contact">
       <h2>Kontak</h2>
       <p>Email: yazzimup@email.com</p>
       <p>WhatsApp: +62858sisanya kapann kapan</p>
       <p>
-  <a href="https://instagram.com/lionell_ra" target="_blank" class="ig-link">
-    <i class="fab fa-instagram"></i> @lionell_ra
-  </a>
-</p>
-<a href="baper-malam.html" class="btn-baper">cobaa cek kesinii</a>
+        <a href="https://instagram.com/lionell_ra" target="_blank" rel="noopener" class="ig-link">
+          <i class="fab fa-instagram"></i> @lionell_ra
+        </a>
+      </p>
+      <button onclick="masukModeSerius()" class="btn-serius">Mode Serius 😐</button>
+</div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 BARAGANTENG</p>
   </footer>
-    <!-- Ini di bagian paling bawah HTML -->
+
+  <!-- Scripts -->
   <script>
-    window.addEventListener("load", function () {
+    // Preloader fadeout
+    window.addEventListener("load", () => {
       const preloader = document.getElementById("preloader");
       preloader.style.opacity = "0";
-      preloader.style.visibility = "hidden";
-      preloader.style.transition = "all 0.5s ease";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 600);
     });
-  </script>
-  <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-</script>
-<script>
-  const tebakan = [
-    {
-      soal: "bawang apa yang suka pergi?",
-      jawab: "bawang bomBYe"
-    },
-    {
-      soal: "gajah apa yang ngeselin?",
-      jawab: "gajahdi"
-    },
-    {
-      soal: "kapan air ngantuk",
-      jawab: "pas di rebus soalnya pas di rebus air nguap"
-    },
-    {
-      soal: "truk apa yang bisa terbang?",
-      jawab: "helikoptruk wkwk"
+    // Hamburger menu toggle
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+    hamburger.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") hamburger.click();
+    });
+
+    // Tebakan logic
+    const tebakan = [
+      { soal: "bawang apa yang suka pergi?", jawab: "bawang bombye" },
+      { soal: "gajah apa yang ngeselin?", jawab: "gajahdi" },
+      { soal: "kapan air ngantuk?", jawab: "pas di rebus soalnya pas di rebus air nguap" },
+      { soal: "truk apa yang bisa terbang?", jawab: "helikoptruk wkwk" },
+    ];
+
+    let index = Math.floor(Math.random() * tebakan.length);
+    const pertanyaanEl = document.getElementById("pertanyaan");
+    const jawabanInput = document.getElementById("jawaban");
+    const feedbackEl = document.getElementById("feedback");
+
+    pertanyaanEl.textContent = tebakan[index].soal;
+
+    function cekJawaban() {
+      const userJawab = jawabanInput.value.trim().toLowerCase();
+      const benar = tebakan[index].jawab.toLowerCase();
+      if (!userJawab) {
+        feedbackEl.textContent = "Isi jawaban dulu dong 😅";
+        return;
+      }
+      if (userJawab === benar) {
+        feedbackEl.textContent = "😎 Jir bener hoki banget!";
+      } else {
+        feedbackEl.textContent = `😅 Salahhh wuuur: "${tebakan[index].jawab}"`;
+      }
+      // Ganti pertanyaan baru setelah delay
+      setTimeout(() => {
+        index = Math.floor(Math.random() * tebakan.length);
+        pertanyaanEl.textContent = tebakan[index].soal;
+        jawabanInput.value = "";
+        feedbackEl.textContent = "";
+      }, 3500);
     }
-  ];
-
-  let index = Math.floor(Math.random() * tebakan.length);
-  document.getElementById("pertanyaan").textContent = tebakan[index].soal;
-
-  function cekJawaban() {
-    const userJawab = document.getElementById("jawaban").value.toLowerCase();
-    const benar = tebakan[index].jawab.toLowerCase();
-    const feedback = document.getElementById("feedback");
-
-    if (userJawab === benar) {
-      feedback.textContent = "😎 jir bener hoki banget";
-    } else {
-      feedback.textContent = `😅 salahhh wuuur: "${tebakan[index].jawab}"`;
-    }
-
-    // Ganti ke tebakan baru
-    setTimeout(() => {
-      index = Math.floor(Math.random() * tebakan.length);
-      document.getElementById("pertanyaan").textContent = tebakan[index].soal;
-      document.getElementById("jawaban").value = "";
-      feedback.textContent = "";
-    }, 4000);
+  function masukModeSerius() {
+    window.location.href = "modeserius.html";
   }
 </script>
-
-</body>
-</html>
 </body>
 </html>

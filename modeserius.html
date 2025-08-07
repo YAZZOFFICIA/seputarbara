@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portofolio resmi Barack Yazid Alamsyah, web developer dengan berbagai projek aplikasi dan website. Hubungi saya untuk kerjasama." />
+  <title>Barack Yazid Alamsyah</title>
+  <link rel="icon" href="favicon.ico" />
+  
+  <!-- Font Google Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pV9xQDsQVz+PSwBlZ+XcQKxpTxwz8u5qP46A2veL8vjknZpF+zTXW4+Q7+s7K9WnYEvj2q5lzGrKIR+MB1i8sA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #2a003f, #5b0080);
+      color: #eee;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #bbaaff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover, a:focus {
+      color: #e0c3fc;
+      outline: none;
+    }
+
+    header {
+      background: #1b0036;
+      padding: 20px 40px;
+      box-shadow: 0 2px 8px rgba(91,0,128,0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      color: #cbbfff;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #e0c3fc;
+      cursor: default;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li {
+      font-weight: 600;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #bbaaff;
+    }
+    nav ul li a:hover, nav ul li a:focus {
+      color: #e0c3fc;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: rgba(43, 2, 72, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(91, 0, 128, 0.7);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 60px;
+      color: #e0c3fc;
+    }
+    .hero img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(125, 85, 255, 0.7);
+      transition: transform 0.3s ease;
+      border: 3px solid #7d55ff;
+    }
+    .hero img:hover, .hero img:focus {
+      transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 6px 18px rgba(164, 127, 255, 0.9);
+    }
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #cbbfff;
+    }
+
+    /* Section Titles */
+    section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      color: #a47fff;
+      border-bottom: 2px solid #a47fff;
+      padding-bottom: 8px;
+      text-shadow: 0 0 8px #b98aff;
+    }
+
+    /* Tentang */
+    section.tentang {
+      margin-bottom: 60px;
+      text-align: center;
+      color: #ddd;
+    }
+    section.tentang p {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    /* Projek */
+    section.projek {
+      margin-bottom: 60px;
+    }
+    .projek-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .projek-item {
+      background: #3a0062;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(91,0,128,0.6);
+      padding: 20px;
+      transition: box-shadow 0.3s, transform 0.3s;
+      color: #ddd;
+    }
+    .projek-item:hover, .projek-item:focus-within {
+      box-shadow: 0 6px 20px rgba(164,127,255,0.8);
+      transform: translateY(-5px);
+      outline: none;
+      background: #4b0078;
+    }
+    .projek-item h4 {
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #e0c3fc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .projek-item p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.4;
+    }
+    .projek-item em {
+      color: #999;
+    }
+    .projek-item a {
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      color: #bbaaff;
+    }
+    .projek-item a:hover, .projek-item a:focus {
+      color: #e0c3fc;
+    }
+
+    /* Skill Section */
+    section.skill {
+      margin-bottom: 60px;
+      text-align: center;
+      color: #ddd;
+    }
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+    }
+    .skill-list li {
+      background-color: #7d55ff;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 3px 8px rgba(125, 85, 255, 0.7);
+      transition: background-color 0.3s;
+    }
+    .skill-list li:hover, .skill-list li:focus {
+      background-color: #a47fff;
+      outline: none;
+      cursor: default;
+    }
+
+    /* Kontak dengan background hitam ungu */
+    section.kontak {
+      background: linear-gradient(135deg, #2a003f, #5b0080);
+      color: #eee;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(91, 0, 128, 0.7);
+      margin-bottom: 60px;
+    }
+    section.kontak h3 {
+      color: #e0c3fc;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow: 0 0 5px #b98aff;
+    }
+    section.kontak form label {
+      color: #d1bfff;
+    }
+    section.kontak form input,
+    section.kontak form textarea {
+      background-color: #3a0062;
+      border: 1.5px solid #7d55ff;
+      color: #eee;
+      font-size: 1rem;
+      border-radius: 6px;
+      padding: 10px;
+      width: 100%;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      resize: vertical;
+    }
+    section.kontak form input::placeholder,
+    section.kontak form textarea::placeholder {
+      color: #bbaaff;
+    }
+    section.kontak form input:focus,
+    section.kontak form textarea:focus {
+      border-color: #c69cff;
+      background-color: #4b0078;
+      outline: none;
+      box-shadow: 0 0 10px #c69cff;
+    }
+    section.kontak form button {
+      background-color: #7d55ff;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(125, 85, 255, 0.6);
+      margin-top: 10px;
+    }
+    section.kontak form button:hover,
+    section.kontak form button:focus {
+      background-color: #a47fff;
+      outline: none;
+      transform: scale(1.05);
+      box-shadow: 0 6px 22px rgba(164, 127, 255, 0.8);
+    }
+    .form-note {
+      color: #cbbfff;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1b0036;
+      color: #a89eff;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      user-select: none;
+      text-align: center;
+      box-shadow: 0 -3px 12px rgba(91, 0, 128, 0.5);
+    }
+
+    /* Scroll To Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #7d55ff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(125, 85, 255, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 150;
+    }
+    #scrollTopBtn:hover,
+    #scrollTopBtn:focus {
+      background-color: #a47fff;
+      outline: none;
+      transform: scale(1.15);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 20px;
+      }
+      main {
+        margin: 30px 15px;
+        padding: 20px 15px;
+        max-width: 100%;
+      }
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+      section.tentang p {
+        max-width: 100%;
+      }
+      section.kontak {
+        margin-bottom: 40px;
+        padding: 30px 15px;
+      }
+      .skill-list {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Barack Yazid Alamsyah</h1>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#tentang"><i class="fa fa-user" aria-hidden="true"></i> Tentang</a></li>
+        <li><a href="#projek"><i class="fa fa-folder-open" aria-hidden="true"></i> Projek</a></li>
+        <li><a href="#skill"><i class="fa fa-code" aria-hidden="true"></i> Skill</a></li>
+        <li><a href="#kontak"><i class="fa fa-envelope" aria-hidden="true"></i> Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-label="Profil singkat">
+      <img src="foto-profil.jpg" alt="Foto profil Barack Yazid Alamsyah" tabindex="0" />
+      <h2>Barack Yazid Alamsyah</h2>
+      <p>Web Developer | UI/UX Enthusiast | Problem Solver</p>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="tentang" aria-labelledby="judul-tentang">
+      <h3 id="judul-tentang">Tentang Saya</h3>
+      <p>
+        Saya adalah seorang web developer dengan pengalaman membangun aplikasi dan website modern menggunakan teknologi terbaru. Saya selalu bersemangat mempelajari hal baru dan menyelesaikan tantangan coding dengan solusi efisien.
+      </p>
+    </section>
+
+    <!-- Projek -->
+    <section id="projek" class="projek" aria-labelledby="judul-projek">
+      <h3 id="judul-projek">Projek Saya</h3>
+      <div class="projek-list">
+        <article class="projek-item" tabindex="0">
+          <h4><i class="fa fa-laptop-code" aria-hidden="true"></i> Project Aplikasi Boking online Haji Umrah(pkl)</h4>
+          <p>Aplikasi sederhana travel haji umrah untuk memudahkan jamaah</p>
+          <p><em> HTML, CSS, JavaScript , laravel</em></p>
+          <a href="https://github.com/BarackYazid/todolist" target="_blank" rel="noopener noreferrer">
+            Lihat di GitHub <i class="fa fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+        <article class="projek-item" tabindex="0">
+  <h4><i class="fa fa-globe" aria-hidden="true"></i> Aplikasi Kas Iuran Warga</h4>
+  <p>Aplikasi Bayar Kas Warga Online,Mengatur Keluar Masuk Uang Kas Warga</p>
+  <p><em> HTML, CSS, JavaScript, Laravel</em></p>
+  <p style="color: #d9534f; font-weight: 700; margin-top: 8px;">* Masih dalam pengembangan</p>
+  <a href="#" tabindex="-1" aria-disabled="true" style="color: gray; pointer-events: none; cursor: default;">
+    <i class="fa fa-arrow-up-right-from-square"></i>
+  </a>
+</article>
+      </div>
+    </section>
+
+    <!-- Skill -->
+    <section id="skill" class="skill" aria-labelledby="judul-skill">
+      <h3 id="judul-skill">Keahlian Saya</h3>
+      <ul class="skill-list" role="list">
+        <li tabindex="0">HTML</li>
+        <li tabindex="0">CSS</li>
+        <li tabindex="0">JavaScript</li>
+        <li tabindex="0">Pyhthon</li>
+        <li tabindex="0">Node.js</li>
+        <li tabindex="0">Laravel</li>
+      </ul>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="kontak" aria-labelledby="judul-kontak">
+      <h3 id="judul-kontak">Kontak Saya</h3>
+      <form action="#" method="post" aria-label="Formulir kontak">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Anda" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
+
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
+        <button type="submit" aria-label="Kirim pesan"><i class="fa fa-paper-plane"></i> Kirim</button>
+        <p class="form-note">* Saya akan membalas pesan Anda secepat mungkin.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Barack Yazid Alamsyah. All rights reserved.
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" aria-label="Scroll ke atas" title="Scroll ke atas">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollTopBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
